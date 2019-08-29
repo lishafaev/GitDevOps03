@@ -1,29 +1,29 @@
 # Lesson3
 ***Docker.***
 
-1. create Dockerfile_Alpine 
+1. Create Dockerfile_Alpine 
 
-FROM alpine:latest
-RUN mkdir /home/TestAlpine
-WORKDIR /home/TestApline
-RUN apk add git
-ENTRYPOINT ["git", "clone"]
+FROM alpine:latest  
+RUN mkdir /home/TestAlpine  
+WORKDIR /home/TestApline  
+RUN apk add git  
+ENTRYPOINT ["git", "clone"]  
 
-execute:
+- execute:  
 docker build -f ./Dockerfile_Alpine -t my_test_apline:test_alpine_1 .
 
-execute:
-mkdir -p /home/max/Docker/TestAlpineLoc
+- execute:  
+mkdir -p /home/max/Docker/TestAlpineLoc  
 docker run -v /home/max/Docker/TestAlpineLoc:/home/TestApline my_test_apline:test_alpine_1 https://github.com/lishafaev/SecondRepos.git
 
 2. Create Dockerfile_nginx
 
-FROM nginx
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY index.html /etc/nginx/html/index.html
-CMD nginx -g 'daemon off;'
+FROM nginx  
+COPY nginx.conf /etc/nginx/nginx.conf  
+COPY index.html /etc/nginx/html/index.html  
+CMD nginx -g 'daemon off;'  
 
-- Copy default nginx.conf to custom dir:
+- Copy default nginx.conf to custom dir:  
 cp /etc/nginx/nginx.conf /home/max/GitDevOps03
 - edit nginx.conf, add in tag http:
         server {
