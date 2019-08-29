@@ -25,13 +25,13 @@ CMD nginx -g 'daemon off;'
 
 - Copy default nginx.conf to custom dir:  
 cp /etc/nginx/nginx.conf /home/max/GitDevOps03
-- edit nginx.conf, add in tag http:
-        server {
-                listen 8080;
-        }
+- edit nginx.conf, add in tag http:  
+        server {  
+                listen 8080;  
+        }  
 
 - Create custom index.html in custom dir.
-- Create docker image:
+- Create docker image:  
 docker build -f ./Dockerfile_nginx -t my_test_nginx:test_nginx_1 .
-- Run docker with port forwarding:
+- Run docker with port forwarding:  
 docker run -it -p 83:8080 my_test_nginx:test_nginx_1
