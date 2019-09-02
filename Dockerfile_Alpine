@@ -1,0 +1,5 @@
+FROM alpine:latest
+RUN mkdir /home/TestAlpine
+WORKDIR /home/TestApline
+RUN apk add git
+ENTRYPOINT ["git", "clone"]
