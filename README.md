@@ -19,3 +19,8 @@ docker run -it -e SERVER_URL="172.17.0.1:8111"  \
     -v /home/max/teamcity-build-agent/conf:/data/teamcity_agent/conf  \
 -v /var/run/docker.sock:/var/run/docker.sock  \
     jetbrains/teamcity-agent
+
+- create on Docker hub repo: lishafaev/test_build_image  
+- create in teamcity the first job with image name:tag = lishafaev/test_build_image:%build.number% (this job for building image. Use method build.)  
+- create in teamcity the first job with image name:tag = lishafaev/test_build_image:%build.number% (this job for building image. Use method push).  
+- run jobs, check in Docker hub.  
