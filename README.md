@@ -1,5 +1,5 @@
 # Lesson 4
-***Docker.***
+***Teamcity.Nexus.***
 
 - create dir for agent  
 mkdir -p teamcity-build-agent/conf  
